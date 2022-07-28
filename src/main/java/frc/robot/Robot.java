@@ -34,9 +34,12 @@ public class Robot extends TimedRobot {
     private final int ButtonBACK = 7;
     private final int ButtonSTART = 8;
 
-    private double LT,RT;
+    private double LT, RT;
 
-    private CANSparkMax motor_Chassis_LF = new CANSparkMax(1, MotorType.kBrushed);
+    private final CANSparkMax motor_Chassis_LF = new CANSparkMax(1, MotorType.kBrushed);
+    private final CANSparkMax motor_Chassis_LB = new CANSparkMax(2, MotorType.kBrushed);
+    private final CANSparkMax motor_Chassis_RF = new CANSparkMax(3, MotorType.kBrushed);
+    private final CANSparkMax motor_Chassis_RB = new CANSparkMax(4, MotorType.kBrushed);
 
     @Override
     public void robotInit() {
