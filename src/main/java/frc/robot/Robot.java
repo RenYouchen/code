@@ -47,9 +47,8 @@ public class Robot extends TimedRobot {
     private final CANSparkMax intake = new CANSparkMax(7,MotorType.kBrushless);
 
     //For Test
-    private final int testMotorNum = 4;
     private double testMotorSpeed;
-    private final CANSparkMax testMotor = new CANSparkMax(testMotorNum, MotorType.kBrushless);
+    private final CANSparkMax testMotor = new CANSparkMax(4, MotorType.kBrushless);
 
 
 
