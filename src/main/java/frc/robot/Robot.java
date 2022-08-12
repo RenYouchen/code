@@ -47,8 +47,11 @@ public class Robot extends TimedRobot {
     private final CANSparkMax intake = new CANSparkMax(7,MotorType.kBrushless);
 
     //For Test
-    private double testMotorSpeed;
-    private final CANSparkMax testMotor = new CANSparkMax(4, MotorType.kBrushless);
+    private double testMotorSpeed1;
+    private double testMotorSpeed2;
+    private final CANSparkMax testMotor1 = new CANSparkMax(99, MotorType.kBrushless);
+    private final CANSparkMax testMotor2 = new CANSparkMax(98, MotorType.kBrushless);
+    private final CANSparkMax testMotor3 = new CANSparkMax(97, MotorType.kBrushless);
 
 
 
@@ -86,15 +89,28 @@ public class Robot extends TimedRobot {
 
     @Override
     public void testInit() {
-        testMotorSpeed = 1;
+        testMotorSpeed1 = 1;
+        testMotorSpeed2 = 0.5;
     }
 
     @Override
     public void testPeriodic() {
         if(joystick.getRawButton(ButtonA)){
-            testMotor.set(testMotorSpeed);
+            testMotor1.set(testMotorSpeed1);
         }else{
-            testMotor.set(0);
+            testMotor1.set(0);
+        }
+
+        if(joystick.getRawButton(ButtonB)){
+            testMotor2.set(testMotorSpeed1);
+        }else{
+            testMotor2.set(0);
+        }
+
+        if(joystick.getRawButton(ButtonX)){
+            testMotor3.set(testMotorSpeed2);
+        }else{
+            testMotor3.set(0);
         }
     }
 
